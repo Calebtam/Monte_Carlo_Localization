@@ -308,6 +308,7 @@ void visualizationAndw(int n, Robot robot, int step, Robot p[], Robot pr[], cons
 
     // Show the image and wait for a key press
     // plt::show();
+    plt::save("./myImages/Step" + to_string(step) + ".png");
 
     // 显示图像
     plt::show(false); // 交互式显示，非阻塞
@@ -384,7 +385,7 @@ int main()
             w[i] = p[i].measurement_prob(z);    // 权重：基于粒子的感测值与机器人真实感测值 z 的接近程度计算权重。  权重通过高斯分布计算，更接近的粒子权重更高。
             
             // 减缓收敛速度： 增加随机扰动
-            w[i] += gen_real_random() * 6e-11; 
+            w[i] += gen_real_random() * 9e-11; 
             // cout << w[i] << endl;
         }
 
